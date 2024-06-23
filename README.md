@@ -12,11 +12,13 @@
 4. Install development dependencies  
 ```npm install --save-dev nodemon concurrently```  
 
-5. Create project structure  
-```mkdir models routes```  
+5. Create structure folders  
+```mkdir models routes``` 
+
+6. Create main file  
 ```touch index.js```  
 
-6. Add the following code to index.js  
+7. Add the following code to index.js  
 ```
 const express = require('express');
 const mongoose = require('mongoose');
@@ -27,7 +29,7 @@ const app = express();
 app.use(bodyParser.json());
 
 const uri =
-    'mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/?retryWrites=true&w=majority&appName=<your app name>';
+    'mongodb+srv://<username>:<password>@<cluster>.mongodb.net/?retryWrites=true&w=majority&appName=<name>';
 
 mongoose
     .connect(uri)
@@ -41,22 +43,24 @@ app.listen(PORT, () => {
 
 ```  
 
-7. Add a run script inside your package.json file, under scripts:  
+8. Add a run script inside your package.json file, under scripts:  
 ```"server": "nodemon index.js"```  
 
-8. Install your driver for MongoBD if you haven't  
+9. Install your driver for MongoBD if you haven't  
 ```npm install mongodb```  
 
-9. Install environmental variables module  
+10. Install environmental variables module  
 ```npm install dotenv```
 
-10. Create a .env file  
+11. Create a .env file  
 ```touch .env```  
 
-11. Add your connection string into your .env file:  
-```MONGODB_URI=mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/?retryWrites=true&w=majority&appName=<your app name>```
+12. Add your connection string into your .env file:  
+```
+MONGODB_URI=mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/?retryWrites=true&w=majority&appName=<your app name>
+```
 
-12. Replace your connection string code portion:   
+13. Replace your connection string code portion:   
 ```   
 const uri =
     'mongodb+srv://<your username>:<your password>@<your cluster>.mongodb.net/?retryWrites=true&w=majority&appName=<your app name>';
@@ -65,5 +69,12 @@ const uri =
 With the following:
 ```const uri = process.env.MONGODB_URI;```  
 
-13. Run your project:
-```npm run server```   # node-react-starter
+14. Run your project:
+```npm run server``` 
+
+15. Your app should log the following:
+```
+App running on port 5000
+App connected to MongoDB Atlas
+```  
+
