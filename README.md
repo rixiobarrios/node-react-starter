@@ -69,10 +69,16 @@ const uri =
 With the following:
 ```const uri = process.env.MONGODB_URI;```  
 
-14. Run your project:
+14. Add .gitignored file  
+```touch .gitignored```  
+
+15. Type the .env file name to .gitignored  
+```.env```  
+
+16. Run your project:
 ```npm run server``` 
 
-15. Your app should log the following:
+17. Your app should log the following:
 ```
 App running on port 5000
 App connected to MongoDB Atlas
